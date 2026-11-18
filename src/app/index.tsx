@@ -35,7 +35,7 @@ export default function HomeScreen() {
         <ThemedView style={styles.heroSection}>
           <AnimatedIcon />
           <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
+            Bienvenido a la plataforma de la polleria abrahamsito to&nbsp;Expo
           </ThemedText>
         </ThemedView>
 
