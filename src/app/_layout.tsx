@@ -1,18 +1,46 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useColorScheme } from 'react-native';
+import { Drawer } from 'expo-router/drawer';
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
-
-SplashScreen.preventAutoHideAsync();
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+export default function Layout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
+    <Drawer
+    screenOptions={{
+      headerStyle:{
+        backgroundColor:'black',
+      },
+      headerTintColor:'skyblue',
+      headerTitleStyle:{
+        fontWeight:'bold',
+      },
+    }}
+    >
+      <Drawer.Screen
+        name="index" // This is the name of the page and must match the url from root
+        options={{
+          drawerLabel: 'Inicio',
+          title: 'INICIO',
+        }}
+      />
+      <Drawer.Screen
+        name="explore" // This is the name of the page and must match the url from root
+        options={{
+          drawerLabel: 'Nosotros',
+          title: 'NOSOTROS',
+        }}
+      />
+       <Drawer.Screen
+        name="crud" // This is the name of the page and must match the url from root
+        options={{
+          drawerLabel: 'Crud',
+          title: 'CRUD',
+        }}
+      />
+      <Drawer.Screen
+        name="login" // This is the name of the page and must match the url from root
+        options={{
+          drawerLabel: 'Login',
+          title: 'LOGIN',
+        }}
+      />
+    </Drawer>
   );
 }
